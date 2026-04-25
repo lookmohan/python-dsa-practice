@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # DSA Practice - Easy Level (Python)
 
 This repository contains my **Data Structures and Algorithms** practice problems solved in Python.  
