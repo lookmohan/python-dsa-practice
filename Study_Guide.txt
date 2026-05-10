@@ -1,0 +1,618 @@
+Here it is, cleanly grouped exactly how you asked 👇
+
+---
+
+**Topic: Basics & Complexity**
+
+1. Introduction to Data Structures
+2. Introduction to Algorithms
+3. Time Complexity of an Algorithm
+4. Space Complexity of an Algorithm
+5. Asymptotic Analysis
+6. Asymptotic Notations
+7. Big O Rules & Analysis
+
+---
+
+**Topic: Arrays**
+
+1. One-Dimensional Array
+2. Print elements of an Array
+3. Remove Even Integers
+4. Reverse an Array
+5. Find Minimum value
+6. Find Second Maximum
+7. Move Zeroes to End
+8. Find Missing Number
+9. Resize an Array
+10. Merge Two Sorted Arrays
+11. Sort 0s, 1s, 2s (Dutch Flag)
+12. Squares of Sorted Array
+13. Rearrange Array (Max/Min)
+14. Remove Element
+15. Remove Duplicates from Sorted Array
+16. Product of Array Except Self
+'''
+delete this 
+Here you go — clean, structured, and consistent for all 16 🔥
+
+---
+
+## 1. One-Dimensional Array
+
+**code :**
+
+```python
+arr = [1, 2, 3, 4, 5]
+print(arr)
+```
+
+**workflow :**
+
+```
+# Create a list
+# Store elements in it
+# Print the array
+# =====================================================
+```
+
+---
+
+## 2. Print elements of an Array
+
+**code :**
+
+```python
+arr = [1, 2, 3, 4, 5]
+
+for i in arr:
+    print(i, end=" ")
+```
+
+**workflow :**
+
+```
+# Traverse array using loop
+# Print each element
+# =====================================================
+```
+
+---
+
+## 3. Remove Even Integers
+
+**code :**
+
+```python
+arr = [1, 2, 3, 4, 5, 6]
+
+result = [x for x in arr if x % 2 != 0]
+print(result)
+```
+
+**workflow :**
+
+```
+# Traverse array
+# Check if element is odd
+# Store only odd elements
+# =====================================================
+```
+
+---
+
+## 4. Reverse an Array
+
+**code :**
+
+```python
+arr = [1, 2, 3, 4, 5]
+arr.reverse()
+print(arr)
+```
+
+**workflow :**
+
+```
+# Use reverse() method
+# Or swap elements from start and end
+# =====================================================
+```
+
+---
+
+## 5. Find Minimum Value
+
+**code :**
+
+```python
+arr = [3, 1, 5, 2, 4]
+
+print(min(arr))
+```
+
+**workflow :**
+
+```
+# Traverse array
+# Keep track of smallest element
+# Return minimum
+# =====================================================
+```
+
+---
+
+## 6. Find Second Maximum
+
+**code :**
+
+```python
+arr = [3, 5, 1, 4, 2]
+
+first = second = float('-inf')
+
+for num in arr:
+    if num > first:
+        second = first
+        first = num
+    elif num > second and num != first:
+        second = num
+
+print(second)
+```
+
+**workflow :**
+
+```
+# Track largest and second largest
+# Update values while traversing
+# =====================================================
+```
+
+---
+
+## 7. Move Zeroes to End
+
+**code :**
+
+```python
+arr = [0, 1, 0, 3, 12]
+
+pos = 0
+
+for i in range(len(arr)):
+    if arr[i] != 0:
+        arr[pos] = arr[i]
+        pos += 1
+
+for i in range(pos, len(arr)):
+    arr[i] = 0
+
+print(arr)
+```
+
+**workflow :**
+
+```
+# Move non-zero elements forward
+# Fill remaining with zeros
+# =====================================================
+```
+
+---
+
+## 8. Find Missing Number
+
+**code :**
+
+```python
+arr = [1, 2, 4, 5]
+n = 5
+
+total = n * (n + 1) // 2
+missing = total - sum(arr)
+
+print(missing)
+```
+
+**workflow :**
+
+```
+# Calculate expected sum
+# Subtract actual sum
+# Missing number found
+# =====================================================
+```
+
+---
+
+## 9. Resize an Array
+
+**code :**
+
+```python
+arr = [1, 2, 3]
+
+new_size = 5
+new_arr = [0] * new_size
+
+for i in range(len(arr)):
+    new_arr[i] = arr[i]
+
+print(new_arr)
+```
+
+**workflow :**
+
+```
+# Create new array with new size
+# Copy old elements
+# =====================================================
+```
+
+---
+
+## 10. Merge Two Sorted Arrays
+
+**code :**
+
+```python
+arr1 = [1, 3, 5]
+arr2 = [2, 4, 6]
+
+merged = sorted(arr1 + arr2)
+print(merged)
+```
+
+**workflow :**
+
+```
+# Combine both arrays
+# Sort the result
+# =====================================================
+```
+
+---
+
+## 11. Sort 0s, 1s, 2s (Dutch Flag)
+
+**code :**
+
+```python
+arr = [2, 0, 1, 2, 1, 0]
+
+low = mid = 0
+high = len(arr) - 1
+
+while mid <= high:
+    if arr[mid] == 0:
+        arr[low], arr[mid] = arr[mid], arr[low]
+        low += 1
+        mid += 1
+    elif arr[mid] == 1:
+        mid += 1
+    else:
+        arr[mid], arr[high] = arr[high], arr[mid]
+        high -= 1
+
+print(arr)
+```
+
+**workflow :**
+
+```
+# Use 3 pointers: low, mid, high
+# Swap based on value
+# =====================================================
+```
+
+---
+
+## 12. Squares of Sorted Array
+
+**code :**
+
+```python
+arr = [-4, -1, 0, 3, 10]
+
+result = sorted([x*x for x in arr])
+print(result)
+```
+
+**workflow :**
+
+```
+# Square each element
+# Sort the result
+# =====================================================
+```
+
+---
+
+## 13. Rearrange Array (Max/Min)
+
+**code :**
+
+```python
+arr = [1, 2, 3, 4, 5, 6]
+
+result = []
+left, right = 0, len(arr) - 1
+
+while left <= right:
+    if left != right:
+        result.append(arr[right])
+        result.append(arr[left])
+    else:
+        result.append(arr[left])
+    left += 1
+    right -= 1
+
+print(result)
+```
+
+**workflow :**
+
+```
+# Use two pointers
+# Pick max then min alternately
+# =====================================================
+```
+
+---
+
+## 14. Remove Element
+
+**code :**
+
+```python
+arr = [3, 2, 2, 3]
+val = 3
+
+result = [x for x in arr if x != val]
+print(result)
+```
+
+**workflow :**
+
+```
+# Traverse array
+# Skip given value
+# Store others
+# =====================================================
+```
+
+---
+
+## 15. Remove Duplicates from Sorted Array
+
+**code :**
+
+```python
+arr = [1, 1, 2, 2, 3]
+
+result = []
+
+for num in arr:
+    if num not in result:
+        result.append(num)
+
+print(result)
+```
+
+**workflow :**
+
+```
+# Traverse array
+# Add only unique elements
+# =====================================================
+```
+
+---
+
+## 16. Product of Array Except Self
+
+**code :**
+
+```python
+arr = [1, 2, 3, 4]
+n = len(arr)
+
+left = [1]*n
+right = [1]*n
+
+for i in range(1, n):
+    left[i] = left[i-1] * arr[i-1]
+
+for i in range(n-2, -1, -1):
+    right[i] = right[i+1] * arr[i+1]
+
+result = [left[i] * right[i] for i in range(n)]
+
+print(result)
+```
+
+**workflow :**
+
+```
+# Build prefix product array
+# Build suffix product array
+# Multiply both
+# =====================================================
+```
+
+---
+
+If you want, I can next convert this into:
+
+* 🔥 Interview-ready one-liners
+* 🔥 Optimized versions (no extra space)
+* 🔥 Pattern-based grouping (important for DSA mastery)
+
+'''
+---
+
+**Topic: Strings**
+
+1. Palindrome Check
+2. First Non-Repeating Character
+3. Remove Vowels
+4. Longest Substring Without Repeating Characters
+
+---
+
+**Topic: Singly Linked List**
+
+1. Create Linked List
+2. Print Linked List
+3. Find Length
+4. Insert Nodes
+5. Delete Nodes
+6. Search Element
+7. Reverse Linked List
+8. Find Nth Node from End
+9. Remove Duplicates (Sorted)
+10. Insert in Sorted List
+11. Remove Given Key
+12. Detect Loop
+13. Find Start of Loop
+14. Floyd’s Cycle Detection
+15. Remove Loop
+16. Merge Two Sorted Lists
+17. Add Two Numbers (LeetCode #2)
+
+---
+
+**Topic: Doubly Linked List**
+
+1. Representation
+2. Implementation
+3. Print Elements
+4. Insert at Beginning
+5. Insert at End
+6. Delete First Node
+7. Delete Last Node
+
+---
+
+**Topic: Circular Linked List**
+
+1. Representation
+2. Implementation
+3. Traverse & Print
+4. Insert at Start
+5. Insert at End
+6. Remove First Node
+
+---
+
+**Topic: Stack**
+
+1. Stack Basics
+2. Next Greater Element
+3. Valid Parentheses
+
+---
+
+**Topic: Queue**
+
+1. Representation
+2. Implementation
+3. Generate Binary Numbers
+
+---
+
+**Topic: Trees**
+
+1. Binary Trees
+2. Symmetric Tree
+
+---
+
+**Topic: Heap / Priority Queue**
+
+1. Priority Queue Introduction
+2. Binary Heap Representation
+3. Max Heap Implementation
+4. Bottom-Up Heapify (Swim)
+5. Insert in Heap
+6. Top-Down Heapify (Sink)
+7. Delete Max
+
+---
+
+**Topic: Searching**
+
+1. Linear Search
+2. Binary Search
+3. Search Insert Position
+4. Search in Sorted Matrix
+
+---
+
+**Topic: Sorting**
+
+1. Bubble Sort
+2. Insertion Sort
+3. Selection Sort
+4. Merge Sort
+5. Quick Sort
+
+---
+
+**Topic: Matrix**
+
+1. Spiral Traversal
+
+---
+
+**Topic: Graphs**
+
+1. Graph Basics
+2. Number of Islands
+
+---
+
+**Topic: Hashing**
+
+1. Hash Tables
+2. Contains Duplicate
+3. Two Sum
+
+---
+
+**Topic: Intervals**
+
+1. Intervals Introduction
+2. Merge Intervals
+3. Insert Interval
+
+---
+
+**Topic: Trie**
+
+1. Trie Data Structure
+
+---
+
+**Topic: Dynamic Programming**
+
+1. DP Introduction
+2. Kadane’s Algorithm
+
+---
+
+**Topic: Sliding Window**
+
+1. Sliding Window Maximum
+2. Maximum Sum Subarray of Size K
+
+---
+
+**Topic: Miscellaneous / Mixed Problems**
+
+1. Is Valid Subsequence
+2. Reverse Integer
+3. Three Sum Problem
+
+---
